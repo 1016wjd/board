@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <dic class="card mt-4">
+        <dic class="card-header">
+            {{post.title}}
+        </dic>
+        <div class="card-body">
+            {{post.content}}
+        </div>   
+        <dic class="card-footer">
+            <p>{{post.creadted_at}}</p>
+            <a href="{% url 'posts:delete' id=post.id %}" class="btn btn-danger">delete</a>
+            <a href="{% url 'posts:edit' id=post.id %}" class="btn btn-warning">edit</a>
+        </dic>
+    </dic>   
+{% endblock %}
